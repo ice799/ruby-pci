@@ -1,0 +1,36 @@
+ruby-pci    by Joe Damato   http://timetobleed.com
+==================================================
+
+Haven't you always wanted to touch your PCI BUS and it's devices from Ruby?
+
+Well now you CAN!
+
+What is it?
+===========
+ruby-pci is an FFI wrapper for libpci
+
+What do I need?
+===============
+You need ffi and libpci.
+
+% sudo apt-get install libpci-dev
+% sudo gem install ffi
+
+How do I use it?
+================
+There is a sample ruby script included which:
+  - scans the PCI bus
+  - checks each device's vendor ID
+  - if its an Intel device, the script reads a byte from the PCI config space
+  - script then checks the byte to determine if the device is a PCI bridge
+  - if so, a print out is displayed!
+
+The only functionality which has been tested is the functionality in the sample
+script, but in theory everything you can do with libpci you can do with
+ruby-pci.
+
+TODO
+====
+  - Make it a ruby gem
+  - Include more sample scripts
+  - Unit tests or something ?
